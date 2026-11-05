@@ -1,0 +1,16 @@
+.header {
+  display: grid;
+  gap: var(--space-4);
+  margin-bottom: var(--space-7);
+  max-width: 760px;
+}
+
+.center {
+  margin-inline: auto;
+  text-align: center;
+  justify-items: center;
+}
+
+.title {
+  font-size: var(--fs-2xl);
+}

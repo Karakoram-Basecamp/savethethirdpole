@@ -1,0 +1,198 @@
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.head > header {
+  margin-bottom: 0;
+}
+
+.sample {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  border: 1px dashed var(--color-sage);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+/* KPI tiles ------------------------------------------------------------------ */
+.tile {
+  padding: var(--space-5);
+  border-radius: var(--radius-md);
+}
+
+.kpi {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.kpiLabel {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+
+.kpiValue {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 1.8rem + 1.5vw, 3rem);
+  font-weight: 600;
+  line-height: 1;
+  color: var(--heading);
+  font-variant-numeric: tabular-nums;
+}
+
+.kpiDelta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  color: var(--status-good);
+}
+
+/* Panels --------------------------------------------------------------------- */
+.charts {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: var(--space-5);
+  margin-block: var(--space-5);
+}
+
+.panel {
+  display: grid;
+  align-content: start;
+  gap: var(--space-5);
+  padding: var(--space-6) var(--space-5);
+  border-radius: var(--radius-md);
+  min-width: 0;
+}
+
+.panelHead {
+  display: grid;
+  gap: 4px;
+}
+
+.panelHead h3 {
+  font-size: var(--fs-lg);
+}
+
+.panelHead p {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+
+/* Allocation bars ------------------------------------------------------------ */
+.bars {
+  display: grid;
+  gap: var(--space-4);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.barHead {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--fs-sm);
+  margin-bottom: 6px;
+}
+
+.barHead strong {
+  font-variant-numeric: tabular-nums;
+  color: var(--heading);
+}
+
+.barTrack {
+  height: 10px;
+  border-radius: var(--radius-pill);
+  background: var(--accent-soft);
+  overflow: hidden;
+}
+
+.barFill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--color-sage), var(--accent));
+  transition: width 1.2s var(--ease);
+}
+
+/* Table ---------------------------------------------------------------------- */
+.tableWrap {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  min-width: 540px;
+  border-collapse: collapse;
+  font-size: var(--fs-sm);
+}
+
+.table th,
+.table td {
+  padding: 14px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+}
+
+.table thead th {
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.table tbody th {
+  font-weight: 700;
+  color: var(--heading);
+}
+
+.table tbody tr {
+  transition: background-color var(--dur) var(--ease);
+}
+
+.table tbody tr:hover {
+  background: var(--accent-soft);
+}
+
+.table tbody tr:last-child th,
+.table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.statusDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.statusGood {
+  color: var(--status-good);
+  background: color-mix(in srgb, var(--status-good) 14%, transparent);
+}
+
+.statusWarn {
+  color: var(--status-warn);
+  background: color-mix(in srgb, var(--status-warn) 14%, transparent);
+}
+
+.statusAlert {
+  color: var(--status-alert);
+  background: color-mix(in srgb, var(--status-alert) 14%, transparent);
+}
+
+@media (max-width: 960px) {
+  .charts {
+    grid-template-columns: 1fr;
+  }
+}
