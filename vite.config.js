@@ -12,5 +12,6 @@ import { viteSingleFile } from 'vite-plugin-singlefile';
 export default defineConfig(({ mode }) => ({
   plugins: [react(), ...(mode === 'single' ? [viteSingleFile()] : [])],
   define: mode === 'single' ? { 'import.meta.env.VITE_STATIC_PREVIEW': JSON.stringify('true') } : {},
+  base: './',
   build: { outDir: mode === 'single' ? 'dist-single' : 'dist' },
 }));

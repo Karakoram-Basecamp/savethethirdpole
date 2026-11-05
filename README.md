@@ -33,6 +33,18 @@ For Netlify, connect the repository with `npm run build` as the build command an
 `dist` as the publish directory. For a one-file preview, use `npm run build:single`
 and `dist-single` instead.
 
+### GitHub Pages
+
+The repository includes a GitHub Actions workflow at `.github/workflows/deploy.yml`.
+After pushing to GitHub:
+
+1. Open the repository's **Settings → Pages**.
+2. Set **Source** to **GitHub Actions**.
+3. Wait for the **Deploy to GitHub Pages** workflow to finish under the **Actions** tab.
+
+The site will be available at
+`https://<account>.github.io/<repository>/`.
+
 ## Deploying
 The site uses clean URLs (BrowserRouter), so the host must serve `index.html` for unknown paths:
 - Netlify: add `public/_redirects` with `/*  /index.html  200`
