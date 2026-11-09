@@ -1,0 +1,65 @@
+.wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  overflow: hidden;
+  background: var(--photo-base);
+}
+
+.frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.fallback {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: var(--space-2);
+  padding: var(--space-6);
+  text-align: center;
+  color: var(--on-photo);
+  /* Contour-line texture so the placeholder reads as a map/media area */
+  background:
+    repeating-radial-gradient(circle at 30% 60%, transparent 0 22px, rgba(255, 255, 255, 0.07) 22px 23px),
+    repeating-radial-gradient(circle at 75% 30%, transparent 0 18px, rgba(255, 255, 255, 0.07) 18px 19px),
+    var(--photo-base);
+}
+
+.badge {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--color-glacier);
+  color: #fff;
+  box-shadow: 0 0 0 10px rgba(126, 169, 214, 0.18);
+}
+
+.name {
+  margin-top: var(--space-3);
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+}
+
+.note {
+  font-size: var(--fs-sm);
+  color: var(--on-photo-muted);
+}
+
+.open {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  min-height: 40px;
+  background: var(--glass-bg-strong);
+  z-index: 2;
+}

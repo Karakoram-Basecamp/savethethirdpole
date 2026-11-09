@@ -1,0 +1,92 @@
+.wrap {
+  position: relative;
+  width: 100%;
+}
+
+.svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+.grid {
+  stroke: var(--line);
+  stroke-width: 1;
+}
+
+.axis {
+  fill: var(--text-muted);
+  font-size: 12px;
+  font-family: var(--font-body);
+  font-variant-numeric: tabular-nums;
+}
+
+.line {
+  stroke: var(--accent);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  /* Draw-on animation using normalised pathLength */
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 1.6s var(--ease);
+}
+
+.area {
+  opacity: 0;
+  transition: opacity 1s var(--ease) 0.6s;
+}
+
+.drawn .line {
+  stroke-dashoffset: 0;
+}
+
+.drawn .area {
+  opacity: 1;
+}
+
+.cursor {
+  stroke: var(--accent);
+  stroke-width: 1;
+  stroke-dasharray: 4 4;
+  opacity: 0.5;
+}
+
+.dot {
+  fill: var(--bg);
+  stroke: var(--accent);
+  stroke-width: 3;
+  transition: cx 0.25s var(--ease), cy 0.25s var(--ease);
+}
+
+.svg rect:focus {
+  outline: none;
+}
+
+.tooltip {
+  position: absolute;
+  transform: translate(-50%, calc(-100% - 16px));
+  display: grid;
+  gap: 2px;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--glass-bg-strong);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  font-size: var(--fs-xs);
+  white-space: nowrap;
+  pointer-events: none;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  transition: left 0.25s var(--ease), top 0.25s var(--ease);
+}
+
+.tooltip strong {
+  font-size: var(--fs-base);
+  color: var(--heading);
+}
+
+.tooltip span {
+  color: var(--text-muted);
+}

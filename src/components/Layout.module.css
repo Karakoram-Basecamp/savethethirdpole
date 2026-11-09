@@ -1,0 +1,50 @@
+.main {
+  position: relative;
+  outline: none;
+}
+
+.ambient {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.ambient span {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  animation: drift 26s ease-in-out infinite alternate;
+}
+
+.blob1 {
+  width: 46vw;
+  height: 46vw;
+  top: 10%;
+  left: -12%;
+  background: var(--blob-1);
+}
+
+.blob2 {
+  width: 40vw;
+  height: 40vw;
+  bottom: -10%;
+  right: -10%;
+  background: var(--blob-2);
+  animation-delay: -8s !important;
+}
+
+.blob3 {
+  width: 30vw;
+  height: 30vw;
+  top: 40%;
+  left: 45%;
+  background: var(--blob-3);
+  animation-delay: -15s !important;
+}
+
+@keyframes drift {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(6vw, -4vh) scale(1.12); }
+}

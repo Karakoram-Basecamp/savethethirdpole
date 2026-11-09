@@ -1,0 +1,43 @@
+.form {
+  display: grid;
+  gap: var(--space-3);
+  width: 100%;
+  max-width: 520px;
+}
+
+.row {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  border-radius: var(--radius-pill);
+  padding-inline: 20px;
+}
+
+.msg {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  min-height: 1.4em;
+}
+
+.success {
+  color: var(--status-good);
+  font-weight: 600;
+}
+
+.error {
+  color: var(--status-alert);
+  font-weight: 600;
+}
+
+@media (max-width: 480px) {
+  .row {
+    flex-direction: column;
+  }
+}
